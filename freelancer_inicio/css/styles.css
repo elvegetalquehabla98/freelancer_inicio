@@ -10,7 +10,15 @@
 /*html y body van para poder usar la unidad "rem" en nuestro código*/
 html {
     font-size: 62.5%;
+    /* Implementando BOX-Sizing */
+    box-sizing: border-box;
 }
+
+ /* Implementando BOX-Sizing */
+ /* el "*" significa que tome todos los elementos del HTML */
+*, *::before, *:after {
+    box-sizing: inherit;
+} 
 
 body {
     font-size: 16px;
@@ -29,7 +37,7 @@ body {
 }
 
 .contenedor {
-    width: 120rem;
+    max-width: 120rem;
     /*Orden de margin: top, derecha, abajo, izquierda*/
     margin: 0 auto 0 auto;
 }
@@ -41,10 +49,24 @@ body {
 
 .navegacion-principal {
     display: flex;
-    justify-content:space-between;
+    /* para que se muestren en forma de columna los elementos */
+    flex-direction: column;
+    /* justify-content:space-between;
+    align-items: center; */
+}
+
+/* ahora queremos que al llegar a determinado tamaño de pantalla se muestren horizontal usamos Media Quieries */
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
 }
 
 .navegacion-principal a {
+    display: block;
+    text-align: center;
     /* background-color: var(--primario); */
     color: var(--blanco);
     text-decoration: none;
@@ -57,22 +79,39 @@ body {
     background-color: var(--primario);
     color: var(--negro);
 }
-
+/* 
 body {
     background-color: yellow;
-}
+} */
 
 /* Media Queries */
 
 /* hace que al pasar los 480 px el color de fondo se vuelva azul */
-@media (min-width: 480px) {
+/* @media (min-width: 480px) {
     body {
         background-color: blue;
     }
-}
+} */
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     body {
         background-color: cornflowerblue;
     }
+} */
+
+/* agregando imagen de fondo */
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    padding: 20px;
+    position: relative;
+}
+
+.contenido-hero {
+    position: absolute;
+    background-color: red;
+    width: 2rem;
+    height: 2rem;
 }
