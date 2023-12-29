@@ -1,0 +1,68 @@
+/*paleta de colores*/
+:root {
+    --blanco: #ffffff;
+    --negro: #212121;
+    --gris: #3d3733;
+    --primario:  #ff6400;
+    --secundario: #be02ff; 
+}
+
+/*html y body van para poder usar la unidad "rem" en nuestro código*/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;
+}
+
+/* estilos propios*/
+.titulo{
+    text-align: center;
+    font-size: 3.8rem;
+}
+
+
+.titulo span {
+    font-size: 2rem;
+}
+
+.contenedor {
+    width: 120rem;
+    /*Orden de margin: top, derecha, abajo, izquierda*/
+    margin: 0 auto 0 auto;
+}
+
+.nav-bg {
+    background-color:var(--secundario);
+
+}
+
+.navegacion-principal {
+    display: flex;
+    justify-content:space-between;
+}
+
+.navegacion-principal a {
+    /* background-color: var(--primario); */
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem; /*se cambió de la padre a esta para ensanchar el hover*/
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--negro);
+}
+
+/* Media Queries */
+
+/* hace que al pasar los 480 px el color de fondo se vuelva azul */
+@media (min-width: 768px) {
+    body {
+        background-color: cornflowerblue;
+    }
+}
