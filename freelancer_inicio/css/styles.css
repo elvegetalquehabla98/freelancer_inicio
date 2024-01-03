@@ -12,7 +12,16 @@ html {
     font-size: 62.5%;
     /* Implementando BOX-Sizing */
     box-sizing: border-box;
-    /* scroll-snap-type: x mandatory; */
+    scroll-snap-type: y mandatory;
+    /* scroll-snap-type: y proximity; */
+}
+
+/* scroll-snap */
+.servicios,
+.navegacion-principal,
+.formulario{
+    scroll-snap-align: center;
+    scroll-padding-top: always; /*hace que pare en las dos secciones el scrollsnap*/
 }
 
  /* Implementando BOX-Sizing */
@@ -224,11 +233,6 @@ body {
     align-items: flex-end;
 }
 
-.servicios,
-.navegacion {
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-}
 
 /* Acomodando servicios en tarjeta de servicios*/
 @media (min-width: 768px) {
